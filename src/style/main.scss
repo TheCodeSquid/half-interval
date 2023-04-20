@@ -1,0 +1,19 @@
+:root {
+  font-family: "Inter", sans-serif;
+  font-size: 20px;
+
+  --bg-default: #222;
+  --bg-red: #322;
+  --bg-blue: #223;
+  --text: #fff;
+  --dim: #ccc;
+  --disabled: #666;
+  --panel: #6662;
+}
+
+body {
+  background-color: var(--bg-default);
+  color: var(--text);
+
+  transition: background-color 0.2s ease;
+}
