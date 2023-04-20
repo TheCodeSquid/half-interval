@@ -4,10 +4,13 @@ export type Background = "default" | "red" | "blue";
 
 export const background = writable<Background>("default");
 
+const random = (): Background =>
+  Math.random() >= 0.5 ? "red" : "blue"
+
 export const toggleBg = (bg: Background): Background => {
   switch (bg) {
     case "default":
-      return "red";
+      return random();
     case "red":
       return "blue";
     case "blue":

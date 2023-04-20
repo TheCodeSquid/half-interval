@@ -12,7 +12,7 @@
   import {background, toggleBg} from "./state";
 
   const targetCap = 0.5;
-  const timeLimit = 120;
+  const timeLimit = 5;
 
   let time = 0;
   let targetOffset: number | undefined;
@@ -56,8 +56,9 @@
     const delta = start - prev;
     prev = start;
     if (time + delta >= timeLimit) {
+      time = timeLimit;
       targetOffset = undefined;
-      stop();
+      active = false;
       return;
     }
     
@@ -99,7 +100,7 @@
   </div>
 
   <div class="controls">
-    <button on:click={toggle}>
+    <button on:click={toggle} disabled={!active && time >= timeLimit}>
       {#if active}
         <IconPlayerPauseFilled stroke={0} size={36}/>
       {:else}
