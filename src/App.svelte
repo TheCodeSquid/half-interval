@@ -47,6 +47,7 @@
     a {
       background: linear-gradient(to right, #8ccdc4, #57a096);
       background-clip: text;
+      -webkit-background-clip: text;
       color: transparent;
     }
   }
