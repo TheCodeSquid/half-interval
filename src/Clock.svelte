@@ -11,8 +11,8 @@
 
   import {background, toggleBg} from "./state";
 
-  const targetCap = 0.5;
-  const timeLimit = 120;
+  const targetCap = 0.05;
+  const timeLimit = 5;
 
   let time = 0;
   let targetOffset: number | undefined;
@@ -70,7 +70,8 @@
       if (targetOffset > targetCap)
         targetOffset /= 2;
       else
-        targetOffset = 0;
+        // J**** wanted to see what it would be like if it went to infinity.
+        while (true) {  }
 
       $background = toggleBg($background);
     }
