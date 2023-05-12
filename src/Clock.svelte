@@ -12,7 +12,7 @@
   import {background, toggleBg} from "./state";
 
   const targetCap = 0.05;
-  const timeLimit = 5;
+  const timeLimit = 120;
 
   let time = 0;
   let targetOffset: number | undefined;
